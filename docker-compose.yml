@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile-client # Pointing to the client Dockerfile
+    ports:
+      - "3000:80" # Exposes the client app on port 80 of the container to port 3000 of the host
+
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile-server # Pointing to the server Dockerfile
+    ports:
+      - "5000:5000" # Exposes the server app on port 5000
+
